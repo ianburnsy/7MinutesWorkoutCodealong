@@ -1,5 +1,6 @@
 package uk.co.thechange.a7minutesworkoutcodealong
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.FrameLayout
@@ -16,11 +17,10 @@ class MainActivity : AppCompatActivity() {
 
         // create entry point for button using viewbinding...
         binding?.flStart?.setOnClickListener{
-            Toast.makeText(
-                this@MainActivity, // haven't used this format before?
-                "Here we will start the exercise",
-                Toast.LENGTH_SHORT
-            ).show()
+
+        //create an intent so we can move from start button to exercise
+            val intent = Intent(this, ExerciseActivity::class.java)
+            startActivity(intent)
         }
     /*
         // creating an entry point for the button using findViewById
